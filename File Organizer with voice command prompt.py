@@ -138,7 +138,7 @@ menu_bar.add_cascade(label="⁝☰", menu=create_menu)
 create_menu.add_command(label="HOW TO USE?", command=howtouse)  # Adding button and label to menu bar
 create_menu.add_command(label="ABOUT", command=about)       # # Adding button and label to menu bar
 create_menu.add_separator()         # Adding seperator between menu bar items
-create_menu.add_command(label="EXIT", command=root.quit)    # # Adding button and label to menu bar
+create_menu.add_command(label="EXIT", command=root.destroy)    # # Adding button and label to menu bar
 
 # =======================================================
 #   End of Menu Section
@@ -369,11 +369,9 @@ def ent2(event):
 # Event binded for speaking out the Complete path to the parent directory
 def ent3(event):
     if (len(final_destination_entry_box3.get()) == 0):
-        engine.stop()
-
-    elif (final_destination_entry_box3.get() == "Click Browse to Select"):
-        engine.say(final_destination_entry_box3.get())
+        engine.say("Please select a complete and correct path to the parent directory")
         engine.runAndWait()
+
     else:
         engine.say("Final Directory is " + final_destination_entry_box3.get())
         engine.runAndWait()
@@ -568,4 +566,3 @@ X_coordinate, Y_coordinate = forRootgeometry(1150, 650)     # For calling the fu
 root.geometry(f'{1150}x{650}+{int(X_coordinate)}+{int(Y_coordinate)}')      # For setting the dimensions of the root window
 
 root.mainloop()     # Running the root window in a loop
-
