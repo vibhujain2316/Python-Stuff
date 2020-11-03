@@ -1,6 +1,3 @@
-# ======================================================
-#    Imports
-# ======================================================
 
 from tkinter import *   # For tkinter widgets and windows
 from tkinter import filedialog      # For opening file explorer
